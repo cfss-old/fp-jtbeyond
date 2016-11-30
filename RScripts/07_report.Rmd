@@ -1,0 +1,80 @@
+---
+title: "People`s Daily during Tiananmen Movement"
+author: Tong Ju
+output:
+  github_document
+---
+```{r setup, include = FALSE}
+library(tidyverse)
+library(feather)
+library (knitr)
+library(tidytext)
+
+df<- read_feather("data/df.feather")
+word_counts<-read_feather("data/word_counts.feather")
+
+```
+
+##Overview of reserach questions and data
+
+People's Daily is the leading official newspaper in China. In this report, I intend to explore how the Tiananmen Movement shape the narrative construction process of CCP during 1989 May to July. I scraped all the front page of People's Daily 30 days before and after June 3rd to 4th's military crackdown. There was obvious topic shift before and after crackdown in the People's Daily. It appears before crackdown, this newspaper focus on the students` hunger strike, which was reported neutrally or positively. However, after crackdown, very negative words have began to appear, such as counter-revolutionary, riots, and so on, and not unexpectedly the newspaper aimed to describe the movement as a turmoil or riot.    
+
+* Part I: I will briefly introduce the method I use to scrape the newspaper and descripitive statistic of the text data.
+* Part II: I ananlyze the high-frequency words before and after crackdown, and compare the word-frequency of several words during May to July in 1989.
+* Part III: a topic model has been established, which implies the same trend I have found in part I. 
+
+
+##Part I: Overview of the scraped text information of People`s Daily (1989/May/4th to 1989/July/4th)
+
+I scraped front page of People's Daily through an on-line open source `http://www.ziliaoku.org/rmrb/`. All the texts have been segmentized by using library(jiebaR), and used to establish as a text corpus, which has been further cleaned and organized to a tidy dataframe. Below, I show the top words appearing in the People`s Daily in the period of Tiananmen Movement. 
+
+```{r descriptive, echo = FALSE}
+names(word_counts)<-c("Chinese Term", "Total Count during 62 days", "English translation")
+word_counts %>%
+  kable(caption="The Top Words in People`s Daily during 1989/May/4th to 1989/July/4th", align="c")
+
+```
+
+##Part II: Analysis on the word frequency of People`s Daily. 
+
+The following graph visualize the above table. Clearly, "Students" is at the core of the narrative construction of People`s Daily during this peoriod. Besides this, there are several special words with high frequency, such as counter-revolution, riots, unrest, martial laws and so on. Obviously, this was a very critical time for Chinese government. But how did those bad or negative words appear on the newspaper? Is there any pattern for them? With such questions, I plot the top-words before and after crackdown. 
+
+![](graph/WordCounts.png)
+
+
+![](graph/CountBeforeCrk.png)
+
+
+![](graph/CountAfterCrk.png)
+
+
+In comparison of these top words, the bad or negative words did not appear on the newspaper during the peak of this social movement (around May 12th to 20th), but started to be prevalent only after crackdown, when Chinese government determined to repress the movement.
+
+Both "Riots"(bao luan) and "Unrest"(dong luan) are used to describe the movement. In Chinese context, the former is more severe than the latter. In the below plotting, I compare the word frequency of these two words during time. Before crackdown, People`s daily did not use the Riots so frequently until June 4th. However, about two weeks after the crakdown, the word frequency between two words became more similar, perhaps indicating that the initial narrative construction against the Tiananmen Movement has almost finished around June 15th. I was wondering whether after June 15th, the word frequency distribution will be more similar to other month in 1989. 
+
+![](graph/plot_riots.png)
+
+Also, I compare term "stability" and "counter-revolution", which have sharp contrast in their meaning. Surprisingly, "stabillity" was once used with higher frequency during mid May, when ten thousands of students gathering into the Tiananmen Square. 
+
+![](graph/plot_stability.png)
+
+In the third comparison of "bourgeois liberalis" (this word is used by People`s Daily and CCP to describe the reason why this social movement can occur in China) and "socialism", we find the appearnce of "socialism" was after June 15th, which might imply the second narrative construction has been initiated. In future, I will further explore this part. 
+
+![](graph/plot_capitalism.png)
+
+
+
+##Part III: Analysis on the word frequency of People`s Daily. 
+
+In this part, I established two topic models based on the front pages of People`s Daily before and after crackdown. In both of simulation, I set the topic number as 3, arbitarily. Before crackdown, three topics could be summarized as 1) "student work" (in Chinese context, referring to the political work towards students); 2) "routine words" (those words are very normal in Chinese offical newspaper); 3) "Hunger strike". However, after crackdown, we will see the obvious shift in all the topics, 1) "the victory in suppression of Tiananmen movement"; 2) work towards riots; 3) riot itself. 
+
+![](graph/top_terms_before.png)
+
+
+![](graph/top_terms_after.png)
+
+
+#Conclusion
+
+The modle above reconfirms our judgment in the first part, topic shift is induced by the crackdown. After crackdown, People's Daily attempt to focus two sides, one is to support the government`s action through praising the martyrs and economic growth in China, the other is to devalue the Tiananmen Movement. However, we have seen the severe criticism on the movement did not last for very long time, after June 15th, the newspaper did not differentiate the riots and unrest, and the frequency of these words decline. In addition, some other "political correct" word, such as "socialism", have began to grow, implying another round of narrative construction, whose aim is not to over-emphasize the "evil" of the riots, but to maintian the stability of society. 
+
