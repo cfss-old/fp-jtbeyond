@@ -53,20 +53,24 @@ create_folder <- function (date){
 find_title <- function(list) {
   j <- 0
   for (i in seq_along (list)){
-    if (list[i] !="") {
+    if (list[i] !=""){
       j <- j + 1
-      if (j == 2 ) {
-        if (nchar(list[i]) < 20 ) {
+      if (j == 2) {
+        if (nchar(list[i]) < 20 ){
           title <- list [i]
           break() 
         } else {
           title <- 'notitle'
-        }
-      } 
-    }
+        } 
+      } else {title <- "empty_article"}
+    } else {title <- "empty_article"}
   }
-  return(title)
+  return (title)
 }
+
+    
+
+    
 
 
 # FUNCTION: scraping()
@@ -138,8 +142,11 @@ collecting <-function (date_start, date_end, pagelist) {
 # basedirct <- "data/rawdata/"
 # baseurl <- "http://www.ziliaoku.org/rmrb/"
 
-# pagelist=c(1)
-# collecting ("1989-01-01","1989-12-31", pagelist)
+#pagelist=c(1)
+#collecting ("1986-02-02","1987-12-31", pagelist)
+
+# encounter problem for 1986-01-06 1986-02-02,..., because in these days, there are lots of empty artilces.
+
 
 
 

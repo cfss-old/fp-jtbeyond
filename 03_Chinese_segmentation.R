@@ -244,19 +244,22 @@ create_dataframe <-function (date_start, date_end){
 # Running above functions to segmentize 
 # the texts from "1989-01-01" to "1990-12-31"
 #################################################
-# to do the text_segment will take 1.5 h for 2 yrs` data, Be patient.
+# to do the text_segment will take 1.5 h for 2 yrs` data, so please do not try to 
+# repeat segmentizing all the text files. If you want to test whether the codes work or not,
+# please only try 30-60 days.
 
-# text_segment("1989-01-01", "1989-12-31")
-# dataframe1989<- create_dataframe("1989-01-01", "1989-12-31")
+# text_segment("1986-01-01", "1987-12-31")
+# dataframe1986<- create_dataframe("1986-01-01", "1986-12-31")
+# dataframe1987<- create_dataframe("1987-01-01", "1987-12-31")
 # object.size(dataframe1989)
 
 
-#tidydata_1989 <- dataframe1989 %>%
+tidydata_1987 <- dataframe1987 %>%
 
 # since we only scrape the front page, so there is no need to have page number in "date_page"
 # transmute this column to "date", convert the date to date format from character
 
-#mutate (date = as.Date( gsub('.{2}$', '', date_page)))  %>%
-#select (date, document, title, term, count)
+  mutate (date = as.Date( gsub('.{2}$', '', date_page)))  %>%
+  select (date, document, title, term, count)
 
-#write.csv(tidydata_1989, file = "dataframe/tidydata_1989")
+#write.csv(tidydata_1987, file = "dataframe/tidydata_1987")
