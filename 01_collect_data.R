@@ -15,11 +15,11 @@ library(stringr)
 
 
 # FUNCTION: clean_folder()
-# Input: 
+# Input: folder, date_start, date_end
 # date_start and date_end =  string, the format of date needs to be "XXXX(year)-XX(month)-XX(date)".
 # Output: No return value, only delet the contents of each subfolder
-clean_folder <- function(date_start, date_end){
-  basedirct <- "data/rawdata/"
+clean_folder <- function(folder, date_start, date_end){
+  basedirct <- str_c("data/", folder, "/")
   dates<-seq(as.Date(date_start), as.Date(date_end), by=1)
   for (d in seq_along(dates)) {
     path <-str_c(basedirct, dates[d])
@@ -42,9 +42,35 @@ create_folder <- function (date){
   } 
 }
 
+# FUNCRION find_title() 
+# Input: a list of the string splitted article 
+# Outbut: title = str, the title of the article
+# Note: in the scragped data, the first element is always the description of the news
+# like, the frontpage-important news, or the frontpage-photograph
+# some news may not have a title. this function will detect all the scraping articel
+# to use the second non-space element as its title, if this element has character more than 20 char
+# then consider this new does not a title, assign notilte to this artle.
+find_title <- function(list) {
+  j <- 0
+  for (i in seq_along (list)){
+    if (list[i] !="") {
+      j <- j + 1
+      if (j == 2 ) {
+        if (nchar(list[i]) < 20 ) {
+          title <- list [i]
+          break() 
+        } else {
+          title <- 'notitle'
+        }
+      } 
+    }
+  }
+  return(title)
+}
+
 
 # FUNCTION: scraping()
-# Associated function: create_folder()
+# Associated function: create_folder(), find_title()
 # input = string date XXXX-XX-XX; pagenumber: int. 
 # ouput = None; 
 # File generated: write the scraped texts of artiles, whose \t\t and \t\t\n have been striped,
@@ -64,25 +90,19 @@ scraping <- function (date, pagenumber) {
   text<-article %>% html_nodes(".article") %>% html_text()
   
   # in the text (a list), all the artilces will be saved as an element of this list
-  for (i in seq_along(text)){
+  for (i in seq_along(text)) {
     # strip the space at the begining and the end of one of the article from text
-    rawtext<-strsplit(text[i], '\\s')
-    # after splitting one of the text to a lists of words (sep='space'), the title is the 6th element.
-    # save this string and add the date, page number
-    title <- rawtext[[1]][6]
-    
-    # if title is none, replace it by the other paresd string as title or if it is one sentence news (means it has no title)
-    # return Null.
-    if (title == ""){
-      title <- rawtext[[1]][5]
-    }
-    
-    filename <- str_c(date, "-", pagenumber, ".", toString(i), ".", title)
+    rawtext<-unlist(strsplit(text[i], '\\s'))
+    # after splitting one of the text to a lists of words (sep='space'), 
+    # call the function find_title to assign the second piece of non-null char as the title. 
+    title <- find_title(rawtext)
+    filename <- str_c(date, "-", pagenumber, "_", toString(i), "_", title)
     # pre-processing of the text of the article
     text[i]<-str_trim(text[i], side='both')
     # save the text of one artile
     filedirct<- str_c(basedirct, date, "/", filename,".txt")
     # write into a .txt file into the assigned directory
+    #write.table (text[i], file = filedirct, row.names = F, quote = F)
     writeLines(text[i], filedirct)
   }
 }
@@ -110,15 +130,16 @@ collecting <-function (date_start, date_end, pagelist) {
 # Scraping Data from "http://www.ziliaoku.org/rmrb/"
 ##############################################################
 
+# Note: to scrape the data will take 10-20 min for two yrs` data. 
 
-# clean_folder ("1989-05-04","1989-05-05")
+# clean_folder ("segtext","1989-01-01","1990-12-31")
 
 # Fundamental parameters:
 # basedirct <- "data/rawdata/"
 # baseurl <- "http://www.ziliaoku.org/rmrb/"
 
-pagelist=c(1)
-collecting ("1989-05-04","1989-05-05", pagelist)
+# pagelist=c(1)
+# collecting ("1989-01-01","1989-12-31", pagelist)
 
 
 
