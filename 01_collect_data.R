@@ -56,21 +56,20 @@ find_title <- function(list) {
     if (list[i] !=""){
       j <- j + 1
       if (j == 2) {
-        if (nchar(list[i]) < 20 ){
+        # change the longest string length to 30, rather than 20 
+        if (nchar(list[i]) < 30 ){
           title <- list [i]
           break() 
         } else {
           title <- 'notitle'
+          break()
         } 
-      } else {title <- "empty_article"}
-    } else {title <- "empty_article"}
+      } else {title <- "empty"} # change"empty_article to "empty", because when splitting this title as index, there will be a problem 
+    } else {title <- "empty"}
   }
   return (title)
 }
 
-    
-
-    
 
 
 # FUNCTION: scraping()
@@ -143,7 +142,7 @@ collecting <-function (date_start, date_end, pagelist) {
 # baseurl <- "http://www.ziliaoku.org/rmrb/"
 
 #pagelist=c(1)
-#collecting ("1986-02-02","1987-12-31", pagelist)
+#collecting ("1988-01-01","1988-12-31", pagelist)
 
 # encounter problem for 1986-01-06 1986-02-02,..., because in these days, there are lots of empty artilces.
 
