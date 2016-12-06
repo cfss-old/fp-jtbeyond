@@ -102,7 +102,7 @@ ggplot (df_monthly_score, aes(x = year_month, y = percent, color = key)) +
   theme(legend.position ="bottom", axis.text.x = element_text(angle = 45, hjust = 1))+
   geom_line() +
   labs (title = "SI, WI and EP terms` percentage of each month`s frontpage in People`s Daily", 
-        subtitle = "(January 1986 to Jan December 1990)", 
+        subtitle = "(January 1986 to December 1990)", 
         x = "months from 1986 to 1990",
         y = "weighted scores (in percentage)",
         color = NULL)+ # "color"=NULL to silent the legend title. 
@@ -123,8 +123,30 @@ df_daily_score <-df_score %>%
   # calculate in each month, the featured terms count for how many percentage in total vocabulary
   mutate (adj_SI= 100*(SI/daily_term), adj_WI= 100*(WI/daily_term), adj_EP = 100*(EP/daily_term)) %>%
   select (Datetime, adj_SI, adj_WI, adj_EP) %>%
-  # extract the year from Datetime
-  mutate (year=gsub('.{6}$', '', as.character(Datetime)))
+  gather (key, percent, -Datetime, -year)
+  
+
+##############################
+# Daily scores plot
+############################## 
+ggplot (df_daily_score, aes(x = Datetime, y = percent, fill = key)) +
+  theme_bw () + 
+  # legend position, and rotate the x-axis` label
+  theme(legend.position ="bottom", axis.text.x = element_text(angle = 45, hjust = 1))+
+  geom_bar(stat="identity") +
+  labs (title = "SI, WI and EP terms` percentage of each day`s frontpage in People`s Daily", 
+        subtitle = "(January 1986 to December 1990)", 
+        x = "months from 1986 to 1990",
+        y = "weighted scores (in percentage)",
+        color = NULL)+ # "color"=NULL to silent the legend title. 
+  # change the x-axis`s label 
+  scale_x_date(date_breaks = "1 year", date_minor_breaks = "1 month", date_labels = "%Y-%m") +
+  # change the label`s name
+  scale_fill_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance")) 
+
+png("upload.png", width = 600, height =400)
+ggsave("graph/daily_scores_acorss_years.png") 
+
 
 # find through out 5 years, everyday mean for adj_SI=  0.2165333; adj_WI=0.4380292; adj_EP= 0.251179
 # p <- plot_ly(df_daily_score, x = ~adj_EP, y = ~adj_WI, color = ~as.integer(year),
