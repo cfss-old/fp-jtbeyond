@@ -233,6 +233,7 @@ create_dataframe <-function (date_start, date_end){
 
 ####################################################################################################
 # Debuging:
+
 #1
 # found: when join dataframe with "1989-09-16" 
 # to any dataframe, an error raized as
@@ -256,10 +257,18 @@ create_dataframe <-function (date_start, date_end){
 #4
 # problem for the corpus_to_TDM () function, 
 # The last second lines:
-# txt_tdm <- removeSparseTerms(txt_tdm, 0.95) 
-# the parameter 0.95 control how many tokens will be remained in the final analysis 
+# txt_tdm <- removeSparseTerms(txt_tdm, 0.80) 
+# the parameter 0.80 control how many tokens will be remained in the final analysis  (Sparsity)
 # if use 0.8 (as in hw07), each articel may have very limited terms, some (500 words) might have 5-6
-# terms to be analyzed. 
+# terms to be analyzed. However, if using 0.95 (which I have tried), each article`s most terms can be mantianed
+# but for each year it will create a 40 Mb dataset
+
+#5
+# in the 0.95 case, the final dataset (1986-1990) will be 200 Mb, when pushin gto the github, the request
+# will be rejected (since the dataset can not be exceeded 100 Mb), 
+# but this large file will be kept in the git history record, even delete this 
+# file from the loca folder, local computer still attempt to push the file in the unphushed commit 
+# to the remote master, so it will be declined again and again. 
 ####################################################################################################
 
 

@@ -3,7 +3,7 @@ library(feather)
 
 
 ## clean out any previous work
-paths <- c("data", "dataframe","data/rawdata", "data/segtext","graph")
+paths <- c("data","data/rawdata", "data/segtext","graph")
 
 for(path in paths){
   unlink(path, recursive = TRUE)    # delete folder and contents; "recursive" to further delete all the subfolder in the folder.
