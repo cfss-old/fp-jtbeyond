@@ -128,7 +128,7 @@ kable(top_1989, digits=5, align ="c")
 
 ```
 
-Plots of the counts of the words, of which the frequency change dramatically after the social movement
+Plots of the counts of the words, of which the frequency change dramatically after the social movement in 1986
 
 ```{r fig.width=4, fig.height=4,echo=FALSE,out.extra='style="fixed:left"'}
 df<-read_feather("data/df") %>%
@@ -172,6 +172,41 @@ df %>%
 ```
 
 
+Plots of the counts of the words, of which the frequency change dramatically after the social movement in 1989
+
+```{r fig.width=4, fig.height=4,echo=FALSE,out.extra='style="fixed:left"'}
+wordlist1=c("动乱", "暴乱")
+
+df %>%
+  filter(Datetime >= as.Date("1989-04-01") & Datetime <= as.Date("1990-06-04")) %>%
+  filter (term %in% wordlist1)%>%
+  mutate (en_term=ifelse(term=="动乱", "Unrest", "Riots")) %>%
+  complete(Datetime, en_term, fill =list (count=0)) %>%
+  ggplot(aes(x=Datetime, y=count, color=en_term)) +
+  theme_bw()+
+  geom_line()+
+  labs(title="Word Counts of in People`s Daily during 1989 May to June", 
+       subtitle="Unrest vs. Riots",
+       x="date", y="count (per day)")+
+  theme(legend.title=element_blank(), legend.position="bottom")
+
+```
+```{r fig.width=4, fig.height=4,echo=FALSE, out.extra='style="fixed:right"'}
+wordlist2=c("反革命", "稳定")
+
+df %>%
+  filter(Datetime >= as.Date("1989-05-01") & Datetime <= as.Date("1990-06-04")) %>%
+  filter (term %in% wordlist2)%>%
+  mutate (en_term=ifelse(term=="稳定", "Stability", "the Counter-revolution")) %>%
+  complete(Datetime, en_term, fill =list (count=0)) %>%
+  ggplot(aes(x=Datetime, y=count, color=en_term)) +
+  theme_bw()+
+  geom_line()+
+  labs(title="Word Counts of in People`s Daily during 1989 May to June", 
+       subtitle="the Counter-revolution vs. Stability",
+       x="date", y="count (per day)")+
+  theme(legend.title=element_blank(), legend.position="bottom")
 
 
+```
 
