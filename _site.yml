@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "Introduction"
       href: index.html
-    - text: "Data Exploration"
+    - text: "Explore the Data"
       href: about.html
 output:
   html_document:
