@@ -9,10 +9,8 @@ library(RYandexTranslate)
 # 3) make a note in Readme for this. 
 ###################################################################################
 
-#api_key<-getOption("API_key")
+api_key<-getOption("API_key")
 
-# I do not know why the .Rprofile cashe dose not work here, so I still put the API_key in this code.
-api_key<-"trnsl.1.1.20161115T200845Z.846d2e44de5c376f.d200e21033fe9831123e55d9cf62469cf004e516"
 
 # Function: translateCnWords ~iterate the term column in df to get the corresponding English translation
 translateCnWords<-function(data){

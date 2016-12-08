@@ -59,7 +59,7 @@ df <- do.call ("rbind", list(data1986,data1987, data1988, data1989, data1990)) %
   mutate (Datetime = as.Date(date)) %>%
   separate (date,  c("Year", "Month", "Date"), sep="-") %>%
   unite (year_month, Year, Month, sep = "-") %>%
-  drop_na(term, count)
+  drop_na(term, count) 
 
 write_feather(df, "data/df")
 
