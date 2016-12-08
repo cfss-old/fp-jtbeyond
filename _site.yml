@@ -1,39 +1,12 @@
-name: "People`s Daily (1986-1989)"
+name: "Yuhao and Tong's Final Project"
 output_dir: "."
 navbar:
-  title: "My Website"
-  type: inverse
+  title: "Yuhao and Tong's Final Project"
   left:
     - text: "Home"
-      icon: fa-home
       href: index.html
-    - text: "About"
-      icon: fa-info
+    - text: "Result"
       href: about.html
-    - text: "More"
-      icon: fa-gear
-      menu:
-        - text: "Heading 1"
-        - text: "Page A"
-          href: page_a.html
-        - text: "Page B"
-          href: page_b.html
-        - text: "---------"
-        - text: "Heading 2"
-        - text: "Page C"
-          href: page_c.html
-        - text: "Page D"
-          href: page_d.html
-  right:
-    - icon: fa-question fa-lg
-      href: https://example.com
-
 output:
   html_document:
-    theme: cosmo
-    highlight: textmate
-    include:
-      after_body: footer.html
-    css: styles.css
-    
-<p>Copyright &copy; 2016 Tong and Yuhao,All rights reserved.</p>
+    theme: readable
