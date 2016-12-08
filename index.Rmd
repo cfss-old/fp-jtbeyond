@@ -1,5 +1,5 @@
 ---
-title: "My Website"
+title: "People`s Daily (1986-1990)"
 ---
 
-Hello, Website!
+Hello, Website! 

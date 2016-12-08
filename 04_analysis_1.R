@@ -6,15 +6,14 @@ library(NLP)
 library(tm) # text mining library
 library(tidyverse)
 # install.packages("tidytext")
-# also install the java JDK to the computer
 library(tidytext)
 
 # 3D plot by using the ploty
 #library("devtools")
 #install_github("ropensci/plotly")  # plotly is part of ropensci
-library(plotly)
+#library(plotly)
 # The instruction for ploty is here: https://plot.ly/r/getting-started/
-library(plot3D)
+#library(plot3D)
 
 #install.packages("sparklyr")
 #spark_install(version = "2.0.0")
@@ -79,6 +78,10 @@ df_score <- df %>%
   mutate (WI_score = ifelse (term %in% WI, count, 0)) %>%
   mutate (EP_score = ifelse (term %in% EP, count, 0)) 
 
+# write this dataframe with scores in to a csv file and upload
+# complete_df_and_scores <- df_score %>% 
+#   select (Datetime, term, count, SI_score, WI_score, EP_score)
+# write_csv(complete_df_and_scores, "dataframe/complete_dataset_with_scores")
 ##############################
 # Monthly scores
 ##############################
@@ -109,8 +112,8 @@ ggplot (df_monthly_score, aes(x = year_month, y = percent, color = key)) +
   # change the x-axis`s label 
   scale_x_date(date_breaks = "1 year", date_minor_breaks = "1 month", date_labels = "%Y-%m") +
   # change the label`s name
-  scale_color_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance")) 
-
+  scale_color_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance"))
+  
 png("upload.png", width = 600, height =400)
 ggsave("graph/scores_acorss_years.png") 
 
@@ -123,7 +126,7 @@ df_daily_score <-df_score %>%
   # calculate in each month, the featured terms count for how many percentage in total vocabulary
   mutate (adj_SI= 100*(SI/daily_term), adj_WI= 100*(WI/daily_term), adj_EP = 100*(EP/daily_term)) %>%
   select (Datetime, adj_SI, adj_WI, adj_EP) %>%
-  gather (key, percent, -Datetime, -year)
+  gather (key, percent, -Datetime)
   
 
 ##############################
@@ -142,7 +145,8 @@ ggplot (df_daily_score, aes(x = Datetime, y = percent, fill = key)) +
   # change the x-axis`s label 
   scale_x_date(date_breaks = "1 year", date_minor_breaks = "1 month", date_labels = "%Y-%m") +
   # change the label`s name
-  scale_fill_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance")) 
+  scale_fill_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance")) +
+  
 
 png("upload.png", width = 600, height =400)
 ggsave("graph/daily_scores_acorss_years.png") 
