@@ -164,7 +164,7 @@ df %>%
   ggplot(aes(x=Datetime, y=count, color=en_term)) +
   theme_bw()+
   geom_line()+
-  labs(title="Word Counts in People`s Daily", 
+  labs(title="1986 -1987", 
        subtitle="Bourgeois Liberalism vs. Stability and Unity",
        x="date", y="Count")+
   theme(legend.title=element_blank(), legend.position="bottom") 
@@ -182,7 +182,7 @@ df %>%
   ggplot(aes(x=Datetime, y=count, color=en_term)) +
   theme_bw()+
   geom_line()+
-  labs(title="Word Counts in People`s Daily", 
+  labs(title="1986 -1987", 
        subtitle="Economic Construction and Four Principles",
        x="date", y="Count")+
   theme(legend.title=element_blank(), legend.position="bottom") 
@@ -202,7 +202,7 @@ df %>%
   ggplot(aes(x=Datetime, y=count, color=en_term)) +
   theme_bw()+
   geom_line()+
-  labs(title="Word Counts of in People`s Daily during 1989 May to June", 
+  labs(title="1989 -1990", 
        subtitle="Unrest vs. Riots",
        x="date", y="count (per day)")+
   theme(legend.title=element_blank(), legend.position="bottom")
@@ -219,7 +219,7 @@ df %>%
   ggplot(aes(x=Datetime, y=count, color=en_term)) +
   theme_bw()+
   geom_line()+
-  labs(title="Word Counts of in People`s Daily during 1989 May to June", 
+  labs(title="1989 -1990", 
        subtitle="the Counter-revolution vs. Stability",
        x="date", y="count (per day)")+
   theme(legend.title=element_blank(), legend.position="bottom")

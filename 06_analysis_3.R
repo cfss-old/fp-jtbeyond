@@ -25,7 +25,7 @@ df %>%
   labs(title="Word Counts of in People`s Daily during 1989 May to June", 
        subtitle="Unrest vs. Riots",
        x="date", y="count (per day)")+
-  theme(legend.title=element_blank())
+  theme(legend.title=element_blank(), legend.position="bottom")
 
 
 wordlist2=c("反革命", "稳定")
@@ -41,7 +41,7 @@ df %>%
   labs(title="Word Counts of in People`s Daily during 1989 May to June", 
        subtitle="the Counter-revolution vs. Stability",
        x="date", y="count (per day)")+
-  theme(legend.title=element_blank())
+  theme(legend.title=element_blank(), legend.position="bottom")
 
 
  
@@ -59,7 +59,7 @@ df %>%
   labs(title="Word Counts of in People`s Daily during 1989 May to June", 
        subtitle="Bourgeois Liberalism vs. Stability and Unity",
        x="date", y="Count")+
-  theme(legend.title=element_blank()) 
+  theme(legend.title=element_blank(), legend.position="bottom") 
 
 
 
@@ -77,7 +77,7 @@ df %>%
   labs(title="Word Counts of in People`s Daily during 1989 May to June", 
        subtitle="Economic Construction and Four Principles",
        x="date", y="Count")+
-  theme(legend.title=element_blank()) 
+  theme(legend.title=element_blank(), legend.position="bottom") 
 
   
 
