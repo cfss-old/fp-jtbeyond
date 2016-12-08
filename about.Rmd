@@ -9,8 +9,16 @@ library(tidyverse)
 library(feather)
 library (knitr)
 library(tidytext)
+library(DT)
 
 df<-read_feather("data/df")
+top_1986<-read_feather("data/model1986_top6") %>%
+  select (word, En, estimate, std.error, p.value)
+names(top_1986)<- c("Chinese word", "Engish translation", "predicted frequency","standard error", "p-value")
+
+top_1989<-read_feather("data/model1989_top6") %>%
+  select (word, En, estimate, std.error, p.value) 
+names(top_1989)<- c("Chinese word", "Engish translation", "predicted frequency","standard error", "p-value")
 ```
 
 
@@ -107,7 +115,18 @@ model1986 %>%
 
 
 
+```{r Table-1, echo=FALSE}
+kable(top_1986, digits=5, align ="c")
 
-![](graph/.png)
+```
+
+
+
+
+
+
+
+
+
 
 
