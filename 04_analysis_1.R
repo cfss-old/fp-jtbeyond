@@ -8,18 +8,12 @@ library(tidyverse)
 # install.packages("tidytext")
 library(tidytext)
 
-# 3D plot by using the ploty
-#library("devtools")
-#install_github("ropensci/plotly")  # plotly is part of ropensci
-#library(plotly)
-# The instruction for ploty is here: https://plot.ly/r/getting-started/
-#library(plot3D)
 
-#install.packages("sparklyr")
-#spark_install(version = "2.0.0")
-#library(sparkly)
+
 ######################################################################################
-# There are two easy method to deal with big dataset:
+# When you find running this dataset two slowly on your computer, 
+# please try the following approaches:
+
 # a) sparklyr
 # Note: spark needs you to install the java JDK
 # http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
@@ -28,7 +22,11 @@ library(tidytext)
 # Dealing with big dataset by data.table
 # https://www.analyticsvidhya.com/blog/2016/05/data-table-data-frame-work-large-data-sets/
 ######################################################################################
+#install.packages("sparklyr")
+#spark_install(version = "2.0.0")
+#library(sparkly)
 #sc <- spark_connect(master = "local", version = "2.0.0")
+
 
 
 
@@ -51,6 +49,8 @@ df <- do.call ("rbind", list(data1986,data1987, data1988, data1989, data1990)) %
   separate (date,  c("Year", "Month", "Date"), sep="-") %>%
   unite (year_month, Year, Month, sep = "-") %>%
   drop_na(term, count)
+
+write_feather(df, "data/df")
 
 SI <- c ( "资产阶级自由化", "精神污染", "阶级斗争", "四项",  "剥削阶级", "工人阶级", "无产阶级", "资本主义", "反社会主义",
           "帝国主义", "修正主义", "辩证唯物主义", "虚无主义", "共产主义", "共产主义者", "马克思主义", "马克思主义者", "革命英雄主义","官僚资本主义", "唯物主义", "历史唯物主义",
@@ -147,33 +147,11 @@ ggplot (df_daily_score, aes(x = Datetime, y = percent, fill = key)) +
   # change the label`s name
   scale_fill_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance")) +
   
-
 png("upload.png", width = 600, height =400)
 ggsave("graph/daily_scores_acorss_years.png") 
 
 
 # find through out 5 years, everyday mean for adj_SI=  0.2165333; adj_WI=0.4380292; adj_EP= 0.251179
-# p <- plot_ly(df_daily_score, x = ~adj_EP, y = ~adj_WI, color = ~as.integer(year),
-#              marker = list(symbol = 'circle', sizemode = 'diameter'), sizes = c(5, 20),
-#              text = ~paste('Strong ideology:',adj_SI, 'Weak ideology:',adj_WI, 'Economic performance', adj_EP,
-#                            '<br>Year:', year)) 
-
-## Use plot3D to plot the Daily score
-# x<-df_daily_score$adj_SI
-# y<-df_daily_score$adj_WI
-# z<-df_daily_score$adj_EP
-# 
-# 
-# scatter3D(x, y, z, colvar = NULL, 
-#           col.var = as.integer(df_daily_score$year),
-#           col = c("green", "red", "blue", "yellow", "orange"), 
-#           pch = 19, cex = 0.5,
-#           bty = "g", colkey = FALSE, main ="SI, WI and EP in daily frontpage of People`s Daily (1986-1990)",
-#           xlab =" Strong ideology",
-#           ylab =" Weak ideology",
-#           zlab =" Economic Performance", 
-#           labels = c("1986", "1987", "1988", "1989", "1990"),
-#           theta = 15, phi = 20)
 
 
   
