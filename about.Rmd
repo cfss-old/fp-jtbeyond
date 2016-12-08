@@ -23,8 +23,25 @@ names(top_1989)<- c("Chinese word", "Engish translation", "predicted frequency",
 
 
 
-In this section, we explore the data through building the model for the word frequency before and after the student movement in 1986 and 1989 respectively. 
 
+# Datasource:
+```{r DTtable, echo = FALSE}
+
+data.table<-read_feather("data/df") %>%
+  select(Datetime, term, count) %>%
+  filter (count > 10) %>%
+  filter(Datetime >= as.Date("1989-04-04") & Datetime <= as.Date("1989-07-07"))
+  
+
+datatable (data.table)
+
+```
+
+
+
+
+
+In this section, we explore the data through building the model for the word frequency before and after the student movement in 1986 and 1989 respectively. 
 
 ```{r fig.width=4, fig.height=4,echo=FALSE,out.extra='style="fixed:left"'}
 df1989<- df %>%
