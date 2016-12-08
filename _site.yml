@@ -3,9 +3,9 @@ output_dir: "."
 navbar:
   title: "People`s Daily (1986-1990)"
   left:
-    - text: "Home"
+    - text: "Introduction"
       href: index.html
-    - text: "Result"
+    - text: "Data Exploration"
       href: about.html
 output:
   html_document:
