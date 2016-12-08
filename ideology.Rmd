@@ -1,0 +1,11 @@
+---
+title: "ideology"
+output: html_document
+---
+
+Monthly score plot
+![An Illustration of our data](graph/mscore.png) 
+
+
+Daily score plot
+![An Illustration of our data](graph/dscore.png) 

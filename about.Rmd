@@ -13,6 +13,7 @@ library(tidytext)
 library(DT)
 
 df<-read_feather("data/df")
+
 top_1986<-read_feather("data/model1986_top6") %>%
   select (word, En, estimate, std.error, p.value)
 names(top_1986)<- c("Chinese word", "Engish translation", "predicted frequency","standard error", "p-value")
@@ -228,12 +229,7 @@ df %>%
 
 ```
 
-Monthly score plot
-![An Illustration of our data](graph/mscore.png) 
 
-## Descritption of data
-Daily score plot
-![An Illustration of our data](graph/dscore.png) 
 
 
 ```{r shiny-app, echo = FALSE}

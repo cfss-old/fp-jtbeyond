@@ -1,12 +1,16 @@
-name: "People`s Daily (1986-1990)"
+name: "Authoritarian Discourses of China"
 output_dir: "."
 navbar:
   title: "Yuhao and Tong`s Final Project"
   left:
     - text: "Introduction"
       href: index.html
-    - text: "Explore the Data"
+    - text: "Exploration"
       href: about.html
+    - text: "Ideological Analysis"
+      href: ideology.html
+    - text: "Interactive Analysis"
+      href: interactive.html
 output:
   html_document:
     theme: readable
