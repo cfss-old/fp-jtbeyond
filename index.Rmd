@@ -7,9 +7,16 @@ output:
     toc_float: true
     theme: cosmo
 ---
+#SORRY! This website is still under construction. Please do not evaluate it. 
+
+
+![*A Chinese man stands alone to block a line of tanks heading east on Beijing's Cangan Boulevard in Tiananmen Square, on on June 5, 1989. The man, calling for an end to violence and bloodshed against pro-democracy demonstrators, was pulled away by bystanders, and the tanks continued on their way. More on this iconic image and the still-anonymous tank man*](img/tankman.jpg)
+
+
 
 ## *The Puzzle*
 In attempt to maintain social control, how do authoritarian states respond to emerging social movements? How do these reactions change over multiple social movement cycles? For years, these questions have attracted scholars working in social movement studies as well as political sociology broadly defined. For this project, we mainly focus on one of the authoritarian response strategies: discourse deployment. More specifically, we examine changes of official discourses of Chinese authoritarian government in response to two emerging social movements in the 1980s, the 1986 Student Movement and the Tiananmen Square Protest in 1989. What discourses does the authoritarian government deploy before and after movement events? How do such authoritarian discourses change over time? Are there any patterns for the deployment of authoritarian discourses? By addressing these specific questions in the case of China during the late 1980s, we seek to advance current understanding of authoritarian state's response strategies for emerging social movements. 
+
 
 
 
@@ -17,10 +24,14 @@ In attempt to maintain social control, how do authoritarian states respond to em
 Three lines of research are relevant to our key research questions. They are studies of social movement cycle, evolution and death of social movement, and authoritarian discourse in social crisis. Here we briefly review the existing scholarship and then state how our project could possibly contribute to it. 
 
 
+
+
 ### Social Movement Cycle
 The first strand of studies relevant to our project is research on social movement cycle. As Tarrow (1998) notes, cycle of social movements refers to the cyclical rise and fall in the social movement activity. In China, multiple and cyclical movement events were witnessed in the 1980s (as will be further explained in the next section). What possible explanations could theories of movement cycle give to such cyclical, recurrent emergence of social unrests? Earlier scholars, such as Taylor (1989), argue that some social movements falling in the same categories (e.g., women movements) are interconnected with each other and that earlier social movements sustain key organizational resources, such as devoted individuals within professional social movement organizations (SMOs) for later movement emergence. Other scholars resort to macro-level social factors instead and note that later movements of the same types may arise after the earlier ones since that new political opportunities are created (Tarrow 1998) or that societal and policy changes occur at a later time period (Banaszak and Ondercin 2016). In addition to these organizational and macro-social factors, Xu (2013) adds a cultural dimension to the topic of cyclical movement emergence and argues that the rise of similar but new movement depends on whether earlier revolutionary vanguards preserve cultural meanings and groups ethos for later use. 
 
 These lines of research illuminate multi-level factors underlying the cyclical recurrence of social movement, but few projects have shed light on how government behaviors such as repression strategies and discourses may play a role in movement cycles. In our project, we address this issue by providing evidence on the change of discourses of authoritarian state. 
+
+
 
 
 ### Social Movement Evolution and Death
@@ -30,10 +41,15 @@ The newest study of movement evolution and death comes from Davenport (2014). In
 Given the abundant previous contributions, it is surprising to know that few studies has emphasized the importance of government discourse. Although numerous studies shed light on other government behaviors such as repression strategies, the role of government discourse in movement trajectory has been undervalued. In our study, government discourse is of key research interest.  
 
 
+
+
 ### Discourse of Social Movement in Authoritarian Context
 To date, one of the few studies that focus on the relationships between official discourse of authoritarian state and movement trajecotry is Zhao (2000)'s illuminating article. Zhao argues that during the Tiananmen Square Protest in 1989 participants used discourses rooted deeply in traditional Confucius culture of China, partly because moral-based state legitimacy in the 1980s made movement participants receptive to culturally and morally charged movement activities. He further presents the connections between state legitimacy and movement trajectory in his following book (2001). Zhao argues that, influenced by societal needs, the legitimacy of Chinese government gradually shifted from ideology-based (i.e., state legitimacy based on puristic Communist ideologies and individual ideological loyalty) to performance-based (i.e., state legitimacy based on improvement of individual living standards and national economic performance) in the 1980s. Accordingly, during recurrent social movements in the 1980s, the authoritarian government deployed different official discourses to reflect different legitimacy bases and cater to new societal needs. 
 
 Although Zhao's work posits key legitimacy-based dynamics underlying changes of official discourses in China during the movement cycles of the 1980s, it lacks detailed, quantitative evidence to support his claims. His work is mainly built upon interviewing data and qualitative archives. On contrary, our project traces discourse change of Chinese authoritarian government over a relative long period of time (see more details in the next section) and use computational methods to provide more accurate descriptions and dynamics of change. 
+
+
+
 
 
 ## References
