@@ -1,15 +1,56 @@
 ---
-title: "People`s Daily (1986-1990)"
+title: "<b>Authoritarian Discourses of China during Social Movements in the 1980s</b>"
+author: "Yuhao Zhuang and Tong Ju" 
 output:
   html_document:
     toc: true
     toc_float: true
+    theme: cosmo
 ---
-## Introduction
-Monthly score plot
-![An Illustration of our data](graph/mscore.png) 
 
-## Descritption of data
-Daily score plot
-![An Illustration of our data](graph/dscore.png) 
- 
+## *The Puzzle*
+In attempt to maintain social control, how do authoritarian states respond to emerging social movements? How do these reactions change over multiple social movement cycles? For years, these questions have attracted scholars working in social movement studies as well as political sociology broadly defined. For this project, we mainly focus on one of the authoritarian response strategies: discourse deployment. More specifically, we examine changes of official discourses of Chinese authoritarian government in response to two emerging social movements in the 1980s, the 1986 Student Movement and the Tiananmen Square Protest in 1989. What discourses does the authoritarian government deploy before and after movement events? How do such authoritarian discourses change over time? Are there any patterns for the deployment of authoritarian discourses? By addressing these specific questions in the case of China during the late 1980s, we seek to advance current understanding of authoritarian state's response strategies for emerging social movements. 
+
+
+
+## *Prevalent Theories for the Puzzle*
+Three lines of research are relevant to our key research questions. They are studies of social movement cycle, evolution and death of social movement, and authoritarian discourse in social crisis. Here we briefly review the existing scholarship and then state how our project could possibly contribute to it. 
+
+
+### Social Movement Cycle
+The first strand of studies relevant to our project is research on social movement cycle. As Tarrow (1998) notes, cycle of social movements refers to the cyclical rise and fall in the social movement activity. In China, multiple and cyclical movement events were witnessed in the 1980s (as will be further explained in the next section). What possible explanations could theories of movement cycle give to such cyclical, recurrent emergence of social unrests? Earlier scholars, such as Taylor (1989), argue that some social movements falling in the same categories (e.g., women movements) are interconnected with each other and that earlier social movements sustain key organizational resources, such as devoted individuals within professional social movement organizations (SMOs) for later movement emergence. Other scholars resort to macro-level social factors instead and note that later movements of the same types may arise after the earlier ones since that new political opportunities are created (Tarrow 1998) or that societal and policy changes occur at a later time period (Banaszak and Ondercin 2016). In addition to these organizational and macro-social factors, Xu (2013) adds a cultural dimension to the topic of cyclical movement emergence and argues that the rise of similar but new movement depends on whether earlier revolutionary vanguards preserve cultural meanings and groups ethos for later use. 
+
+These lines of research illuminate multi-level factors underlying the cyclical recurrence of social movement, but few projects have shed light on how government behaviors such as repression strategies and discourses may play a role in movement cycles. In our project, we address this issue by providing evidence on the change of discourses of authoritarian state. 
+
+
+### Social Movement Evolution and Death
+Another strand of relevant studies is sociology of movement evolution and death. If we zoom in and focus on single social movement, the question is how individual demonstrations in the 1980s proceed and die. Koopmans (1993) admits that evolution of movement after emergence is largely terra incognita. He proposes two lines of mechanisms that interact and jointly shape movement process. The first is a combination of external mechanisms, particularly government repression and facilitation. The second, in contrast, is a line of internal mechanisms and internal characteristics of movements, such as size, novelty, and violence level of the movement. Other internal features shaping the evolution of movements include presence or absence of professional SMOs and informal movement organizations. Built upon Koopmans' arguments, Della Porta's theory (1995) adds cultural mechanisms to the explanations of movement evolution and death and contends that affective focusing (investment in identity of interpersonal egoistic network creating strong emotional affiliation), cognitive closure (disengagement between constructed reality in small groups and reality constructed by others), and other macro-level cultural mechanisms such as culture and religion legitimizing violence as an acceptable resistance repertoire are all determinants of movement trajectories. 
+The newest study of movement evolution and death comes from Davenport (2014). In his book, Davenport provides a more comprehensive understanding of movement trajectory and death and summarize that movement failure results from 1) failure to “reappraise” (i.e., activists’ failure to prepare for certain unexpected types of repression); 2) breakdown of trust (i.e., full of suspicion among activists); 3) harsh repression (e.g., covert and legalistic repression, or mass arrest); 4) repression’s time-lagged effect(i.e., due to previous infamous incidents, movement activists may predict incidents based on the worst scenarios).
+
+Given the abundant previous contributions, it is surprising to know that few studies has emphasized the importance of government discourse. Although numerous studies shed light on other government behaviors such as repression strategies, the role of government discourse in movement trajectory has been undervalued. In our study, government discourse is of key research interest.  
+
+
+### Discourse of Social Movement in Authoritarian Context
+To date, one of the few studies that focus on the relationships between official discourse of authoritarian state and movement trajecotry is Zhao (2000)'s illuminating article. Zhao argues that during the Tiananmen Square Protest in 1989 participants used discourses rooted deeply in traditional Confucius culture of China, partly because moral-based state legitimacy in the 1980s made movement participants receptive to culturally and morally charged movement activities. He further presents the connections between state legitimacy and movement trajectory in his following book (2001). Zhao argues that, influenced by societal needs, the legitimacy of Chinese government gradually shifted from ideology-based (i.e., state legitimacy based on puristic Communist ideologies and individual ideological loyalty) to performance-based (i.e., state legitimacy based on improvement of individual living standards and national economic performance) in the 1980s. Accordingly, during recurrent social movements in the 1980s, the authoritarian government deployed different official discourses to reflect different legitimacy bases and cater to new societal needs. 
+
+Although Zhao's work posits key legitimacy-based dynamics underlying changes of official discourses in China during the movement cycles of the 1980s, it lacks detailed, quantitative evidence to support his claims. His work is mainly built upon interviewing data and qualitative archives. On contrary, our project traces discourse change of Chinese authoritarian government over a relative long period of time (see more details in the next section) and use computational methods to provide more accurate descriptions and dynamics of change. 
+
+
+## References
+Banaszak, Lee Ann, and Heather Ondercin. 2016. "Public Opinion as a Movement Outcome: The Case of the U.S. Women's Movement." *Mobilization* 21: 361-78.
+
+Davenport, Christian. 2014. *"How Social Movements Die: Repression and Demobilization of the Republic of New Africa*. Cambridge: Cambridge University Press.
+
+Della Porta, Donatella. 1995. *Social Movements, Political Violence and the State*. Cambridge: Cambridge University Press.
+
+Koopmans, Ruud. 1993. "The Dynamics of Protest Waves: West Germany, 1965 to 1989." *American Sociological Review* 58: 637-58. 
+
+Taylor, Verta. 1989. "Social Movement Continuity: The Women's Movement in Abeyance." *American Sociological Review* 54: 761-75. 
+
+Tarrow, Sidney. 1998. *Power in Movement: Collective Action, Social Movements and Politics*. Cambridge: Cambridge University Press. 
+
+Xu, Xiaohong. 2013. "Belonging Before Believing: Ethical Activism, Sectarian Ethos and Bloc Recruitment in the Making of Chinese Communism, 1917-1921." *American Sociological Review* 78: 773-96.
+
+Zhao, Dingxin. 2000. "State-Society Relations and Discourses and Activities of the 1989 Beijing Student Movement." *American Journal of Sociology* 105: 1592-1632.
+
+Zhao, Dingxin. 2001. *The Power of Tiananmen: State-Society Relations and the 1989 Beijing Student Movement.* Chicago: University of Chicago Press. 

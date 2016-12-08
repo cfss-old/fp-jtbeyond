@@ -1,7 +1,8 @@
 ---
 title: "Source and Methods"
 output:
-  html_document
+  html_document:
+    theme: cosmo
 ---
 
 ```{r setup, include = FALSE}
@@ -227,3 +228,17 @@ df %>%
 
 ```
 
+Monthly score plot
+![An Illustration of our data](graph/mscore.png) 
+
+## Descritption of data
+Daily score plot
+![An Illustration of our data](graph/dscore.png) 
+
+
+```{r shiny-app, echo = FALSE}
+
+
+
+
+```
