@@ -1,7 +1,7 @@
-name: "Yuhao and Tong's Final Project"
+name: "People`s Daily (1986-1990)"
 output_dir: "."
 navbar:
-  title: "Yuhao and Tong's Final Project"
+  title: "People`s Daily (1986-1990)"
   left:
     - text: "Home"
       href: index.html

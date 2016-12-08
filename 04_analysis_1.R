@@ -8,12 +8,23 @@ library(tidyverse)
 # install.packages("tidytext")
 library(tidytext)
 
-
-
+# Description of this Rscipt
 ######################################################################################
-# When you find running this dataset two slowly on your computer, 
-# please try the following approaches:
+# Purpose: Classify terms into three categories, and examine percentage of terms in 
+# each category in daily and monthly newspaper. 
 
+# Readin Files: all the tidy data in the ./dataframes
+# Output: 1) combined dataframe from 1986-1990 as a feather file --> ./data
+#         2) plots: dscores.png -->./graph  
+#                   mscores.png -->./graph  
+######################################################################################
+
+
+
+
+# When you find running these commands two slowly on your computer, 
+# please try the following two approaches:
+######################################################################################
 # a) sparklyr
 # Note: spark needs you to install the java JDK
 # http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
@@ -115,7 +126,7 @@ ggplot (df_monthly_score, aes(x = year_month, y = percent, color = key)) +
   scale_color_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance"))
   
 png("upload.png", width = 600, height =400)
-ggsave("graph/scores_acorss_years.png") 
+ggsave("graph/mscore.png") 
 
 ##############################
 # Daily scores
@@ -148,7 +159,7 @@ ggplot (df_daily_score, aes(x = Datetime, y = percent, fill = key)) +
   scale_fill_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance")) +
   
 png("upload.png", width = 600, height =400)
-ggsave("graph/daily_scores_acorss_years.png") 
+ggsave("graph/dscore.png") 
 
 
 # find through out 5 years, everyday mean for adj_SI=  0.2165333; adj_WI=0.4380292; adj_EP= 0.251179
