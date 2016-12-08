@@ -5,10 +5,11 @@ output:
     toc: true
     toc_float: true
 ---
-# Introduction
-
+## Introduction
+Monthly score plot
 ![An Illustration of our data](graph/mscore.png) 
 
-# Descritption of data
+## Descritption of data
+Daily score plot
 ![An Illustration of our data](graph/dscore.png) 
-For most of its issues in 1902, the *Ellensburg [Washington] Dawn* featured a quotation from Benjamin Franklin prominently on its front page. "A Bible and a newspaper in every house," the masthead proclaimed, "are the principal support of virtue, morality, and civil liberty."^[*Ellensburg Dawn* (Ellensburg, Wash.), [18 Jan. 1902](http://chroniclingamerica.loc.gov/lccn/sn88085012/1902-01-18/ed-1/seq-1/). 
+ 
