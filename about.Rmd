@@ -1,5 +1,5 @@
 ---
-title: "Source and Methods"
+title: "Data Source and Mehtod"
 output:
   html_document:
     theme: cosmo
@@ -32,10 +32,11 @@ names(top_1989)<- c("Chinese word", "Engish translation", "predicted frequency",
 data.table<-read_feather("data/df") %>%
   select(Datetime, term, count) %>%
   filter (count > 10) %>%
-  filter(Datetime >= as.Date("1989-04-04") & Datetime <= as.Date("1989-07-07"))
+  filter(Datetime >= as.Date("1989-05-04") & Datetime <= as.Date("1989-07-03"))
   
 
-datatable (data.table)
+datatable (data.table, rownames = FALSE, 
+           options = list(columnDefs = list(list(className = 'dt-center', targets = 0:2))))  
 
 ```
 

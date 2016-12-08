@@ -1,7 +1,7 @@
 name: "Authoritarian Discourses of China"
 output_dir: "."
 navbar:
-  title: "Yuhao and Tong`s Final Project"
+  title: "Yuhao and Tong's Final Project"
   left:
     - text: "Introduction"
       href: index.html
@@ -11,6 +11,8 @@ navbar:
       href: ideology.html
     - text: "Interactive Analysis"
       href: interactive.html
+    - text: "Conclusion"
+      href: conclusion.html
 output:
   html_document:
     theme: readable
