@@ -15,5 +15,5 @@ navbar:
       href: conclusion.html
     
   right:
-    - text: "Text Analysis App"
+    - text: "Earlier Text Analysis App"
       href: https://yuhaozhuang.shinyapps.io/authoritarian_discourse/
