@@ -9,7 +9,7 @@ Through the analysis from the last tab, it has been known that some key terms' f
 
 To track patterns of word frequency changes, we further group all terms in the People's Daily into three subcategories, following a Weberian conceptual fashion. First, we create a subcategory named "strong ideology" (hereafter SI), containing all terms related to ideologies and counter-ideologies of socialism, including socialism, capitalism, proletariat, bourgeois liberalism, revolution etc. This subcategory broadly corresponds to traditional authority in Weberian terms; Second, a subcategory of "weak ideology" (hereafter WI) is also generated, including terms containing rationalist-legalist implications in Weberian sense. This subcategory contains words such as reform, stability, stability and unity, etc; Lastly, we generate a subcategory named "economic performance" (hereafter EP) and include in it those key terms relevant to economic performance, such as economy construction, prosperity, etc. 
 
-We then present two graphs depicting the percentages of terms in each subcategory in all reports on the front page of the People's Daily. The first plots the trend on a monthly basis, while the second on a more detailed, daily basis (*Note:in both plots, the blue and red dashed line denote the period of the social movement in 1986 and 1989*): 
+We then present two graphs depicting the percentages of terms in each subcategory in all reports on the front page of the People's Daily. The first plots the trend on a monthly basis, while the second on a more detailed, daily basis *(Note: in both plots the blue and red dashed lines denote the periods of social movements in 1986 and 1989 respectively)*: 
 
 <br>
 
