@@ -3,8 +3,14 @@ title: "Interactive Ideological Analysis"
 output: 
   html_document:
     theme: cosmo
-runtime: shiny
 ---
+<br>
+
+###*Instructions*
+
+For this tab, we further develop the last two graphs in the "Ideological Analysis" tab and make them interactive and include them in a Shiny App. Use the long slide bar right under the graph to select time period for visualization. Go to "Index plot options" to select ideology subcategories to display. In addition, we provide a function to create topic models. Feel free to select numbers of topics in topic models and top terms to be shown in "Topic model options." Notice that it would take some time to generate results when lots of topics are chosen, since the system needs time to translate Chinese terms in our dataset into English. Finally, feel free to download data with information regarding your selected time period in "Data Download."
+<br>
+<br>
 
 
 ```{r setup, include = FALSE}
@@ -36,126 +42,9 @@ df_term_count <-data %>%
 ```
 
 
-```{r Shiny, echo = FALSE, eval = TRUE}
-shinyApp(
-  ui = fluidPage(
-    fluidRow (
-      column(12,
-             tabsetPanel(
-               tabPanel("Index Plot", plotOutput('plot1')),
-               tabPanel("Topic Models", plotOutput('plot2'))))
-      ),
-    fluidRow (
-      column(12, 
-             sliderInput(
-               "dateInput",
-                "Dates",
-               min = as.Date("1986-01-01"),
-               max = as.Date ("1990-12-31"),
-               value = c(as.Date("1986-01-01"), as.Date ("1990-12-31")),
-               width = "100%"
-               ))),
-    fluidRow (column(12,
-             fluidRow(
-               column(6,
-                      h3("Index plot options:"),
-                      checkboxGroupInput("variable", "Index to show:",
-                                         c("Strong Ideology Index"="SI", "Weak Ideology Index"= "WI", "Economic Performance"= "EP"),
-                                         selected = c("SI","WI", "EP"))),
-               column(6,
-                      h3("Topic model options:"),
-                      numericInput(
-                        "topicnum", 
-                        "Number of topics in the topic models:",
-                        2, 2, 5),
-                      numericInput(
-                        "num",
-                        "Number of top terms to be shown: ",
-                        2, 1, 10),
-                      p(" Notice: to prepare the topic models will take a little bit longer time, especially when you choose lots of topics and number of terms to be shown.Be patient!"),
-                      actionButton("update", "Update for Topic Model"))))
-  )
-  ), 
-  server = function(input, output, session){
-    filtered_topic <- reactive({     
-    # Change when the "update" button is pressed...
-    input$update
-    # ...but not for anything else
-    isolate({
-      withProgress({
-        setProgress(message = "Processing corpus and translate the Chinese terms to English, please wait...")
-        df_term_count <- df_term_count %>%
-          filter(
-            Datetime >= input$dateInput[1],
-            Datetime <= input$dateInput[2]
-          ) %>%
-          cast_dtm(Datetime, term, count)
-        topic <- tidy(LDA (df_term_count, k=input$topicnum, control=list(seed=1234)))
-        
-        topic %>%
-          group_by(topic) %>%
-          top_n(input$num, beta) %>%
-          ungroup() %>%
-          arrange (topic, -beta) %>%
-          mutate(En_term = translateCnWords(term)) %>%
-          # translate the terms in topic modeling
-          mutate(En_term = reorder (En_term, beta))
-      })
-    })
-  })
-    output$plot2 <- renderPlot({
-      if (is.null(filtered_topic())) {
-      return()
-    }
-    # interactively plot the df_daily_percent
-      ggplot(filtered_topic(), aes(En_term, beta, fill=factor(topic))) +
-      theme_bw () + 
-      geom_bar(stat = "identity", alpha = 0.8, width =0.5) +
-      facet_wrap( ~ topic, scales = "free")+
-      coord_flip() +
-      labs (title = "Topic models for frontpage in People`s Daily during the chosen time period", 
-            x = "Terms",
-            y = "beta",
-            fill =NULL)
-    
-  })
-    
-      # interactively modify the df_daily_percent
-  filtered_term_freq <- reactive({
-    if(is.null(input$dateInput)) {
-      return(NULL)
-    }
-    
-    df_daily_percent %>%
-      filter(
-        Datetime >= input$dateInput[1],
-        Datetime <= input$dateInput[2],
-        key %in% input$variable
-      )
-    
-  })
-  
-    # plot the index
-  output$plot1 <- renderPlot({
-    if (is.null(filtered_term_freq())) {
-      return()
-    }
-    # interactively plot the df_daily_percent
-    ggplot(filtered_term_freq(), aes(x=Datetime, y=percent, fill=key)) +
-      theme_bw () + 
-      geom_bar(stat = "identity") +
-      labs (title = "SI, WI and EP index of each day`s frontpage in People`s Daily", 
-            x = "Time line",
-            y = "weighted scores (in percentage)",
-            fill = NULL) +
-      scale_fill_discrete(breaks=c("SI", "WI", "EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance"))
-    
-  })
-      
-    
-  }
-  ,options = list(height = 1200, width = 850)
-)
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+
+knitr::include_app("https://jtbeyond.shinyapps.io/hw10/", height = 1200)
 
 
 ```

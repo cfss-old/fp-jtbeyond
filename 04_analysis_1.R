@@ -115,8 +115,8 @@ ggplot (df_monthly_score, aes(x = year_month, y = percent, color = key)) +
   # legend position, and rotate the x-axis` label
   theme(legend.position ="bottom", axis.text.x = element_text(angle = 45, hjust = 1))+
   geom_line() +
-  labs (title = "SI, WI and EP terms` percentage of each month`s frontpage in People`s Daily", 
-        subtitle = "(January 1986 to December 1990)", 
+  labs (title = "SI, WI and EP's Occurrence in the People's Daily (Monthly Summary)", 
+        subtitle = "January 1986 to December 1990", 
         x = "months from 1986 to 1990",
         y = "weighted scores (in percentage)",
         color = NULL)+ # "color"=NULL to silent the legend title. 
@@ -148,8 +148,8 @@ ggplot (df_daily_score, aes(x = Datetime, y = percent, fill = key)) +
   # legend position, and rotate the x-axis` label
   theme(legend.position ="bottom", axis.text.x = element_text(angle = 45, hjust = 1))+
   geom_bar(stat="identity") +
-  labs (title = "SI, WI and EP terms` percentage of each day`s frontpage in People`s Daily", 
-        subtitle = "(January 1986 to December 1990)", 
+  labs (title = "SI, WI and EP's Occurrence in the People's Daily (Daily Summary)", 
+        subtitle = "January 1986 to December 1990", 
         x = "months from 1986 to 1990",
         y = "weighted scores (in percentage)",
         color = NULL)+ # "color"=NULL to silent the legend title. 

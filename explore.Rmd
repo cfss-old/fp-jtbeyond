@@ -1,11 +1,9 @@
 ---
-title: "Data Source and Mehtod"
+title: "<b>Exploratory Analysis</b>"
 output:
   html_document:
     theme: cosmo
-runtime: shiny
 ---
-
 ```{r setup, include = FALSE}
 library(tidyverse)
 library(feather)
@@ -24,10 +22,15 @@ top_1989<-read_feather("data/model1989_top6") %>%
 names(top_1989)<- c("Chinese word", "Engish translation", "predicted frequency","standard error", "p-value")
 ```
 
+This page contains a preliminary analysis of official discourse change. Here we trace change of frequency of appearance in the People's Daily during the months after intensive military repressionss for both movements.
 
+***
+## Interactive Table
 
+First, we provide an interactive table to present counts of terms in the front page of People's Daily on each day from May 4, 1989 to July 3, 1989. This table may help get some sense of the terms that appear in the People's Daily at that period of time. Sort dates, terms, and word counts using the arrow next to each column name.
+<br>
 
-# Data source:
+***
 ```{r DTtable, echo = FALSE}
 
 data.table<-read_feather("data/df") %>%
@@ -40,12 +43,15 @@ datatable (data.table, rownames = FALSE,
            options = list(columnDefs = list(list(className = 'dt-center', targets = 0:2))))  
 
 ```
+<br>
 
+***
+## Binomial Statistical Analysis of Word Frequency Change
+<br>
+Afterwards, we conduct binomial statistical analysis to trace changes of frequency of key terms during the month immediately after the military repression for both movements. In both graphs as follows, dots represent terms, x-axis represents the change of appearance probability of given terms over one month. Positive numbers mark increases in frequency. Y-axis marks the p-value of frequency change. To be clear, we only present 50 terms whose extents of frequency change are the most among all words, and changes for all these selected terms are significant at the .05 level. 
+<br>
+<br>
 
-
-
-
-In this section, we explore the data through building the model for the word frequency before and after the student movement in 1986 and 1989 respectively. 
 
 ```{r fig.width=4, fig.height=4,echo=FALSE,out.extra='style="fixed:left"'}
 df1989<- df %>%
@@ -130,26 +136,33 @@ model1986 %>%
   ylab("Adjusted p-value") +
   labs(title="December 1986 - December 1987")
 ```
+<br>
+<br>
 
+These graphs present interesting findings. During the month after the military repression of the 1986 Student Demonstration, most of these significant terms experience an increase in frequency. However, for the case of Tiananmen Square Protest in 1989, the opposite trend is observed. Most of the key terms experience a decrease in word frequency. This suggests that there are denser discourses immediately following the 1989 movement, while the opposite is the case for the 1986 Student Demonstration. 
 
+In the following two tables, we provide tables to show those terms that change most abruptly during the month after the repression for both events. First we present the result table for the 1986 Student Demonstration, with the English translation of the key terms:
+<br>
 
-
-
-
-Table for the statistic data of the words with high frequeny change after 1986`s social movement (only the top 6 has been shown here)
 ```{r Table-1, echo=FALSE}
 kable(top_1986, digits=5, align ="c")
 
 ```
 
+Then we present the table for the Tiananmen Square Protest in 1989:
+<br>
 
-Table for the statistic data of the words with high frequeny change during 1989`s social movement (only the top 6 has been shown here)
 ```{r Table-2, echo=FALSE}
 kable(top_1989, digits=5, align ="c")
 
 ```
+<br>
 
-Plots of the counts of the words, of which the frequency change dramatically after the social movement in 1986
+***
+## Tentative Visualization of Selected Key Words
+<br>
+What are the relationships between characteristics of key words and their changes of frequency? To preliminary examine such relationships, we tentatively select four word pairs and plot their frequency change during the months after the repression of two movement events:
+
 
 ```{r fig.width=4, fig.height=4,echo=FALSE,out.extra='style="fixed:left"'}
 df<-read_feather("data/df") %>%
@@ -192,9 +205,6 @@ df %>%
   theme(legend.title=element_blank(), legend.position="bottom") 
 ```
 
-
-Plots of the counts of the words, of which the frequency change dramatically after the social movement in 1989
-
 ```{r fig.width=4, fig.height=4,echo=FALSE,out.extra='style="fixed:left"'}
 wordlist1=c("动乱", "暴乱")
 
@@ -231,3 +241,6 @@ df %>%
 
 ```
 
+The graphs shows fascinating results. The word pairs we choose are pairs of a more ideological term and a rather ideology-free term. For instance, "bourgeois liberalism" has relative high ideological level and was used by the Chinese government to attack those individuals whose behaviors and discourses deviate from principles of socialism. In comparision, "stability and unity" contains little ideological representation. Similarly, from the authoritarian state's perspective "riot" usually carries negative emotional meanings, while "unrest" is rather neutral emotionally and ideologically. In all four graphs, words with strong ideological meanings are plotted in red lines, while those with rather weaker ideological meanings are plotted in green lines. It could be found that those representations of strong ideology maintain their frequency of appearance even one year after the movement repression, while those of weaker ideology deterioriate soon after the repression. 
+
+These visualized findings seem to indicate that Chinese authoritarian government use discourses with strong ideology much less after the 1989 Movement compared to after the 1986 Student Demonstration. The next tab in this website further explores this topic through deeper graphic analysis. 

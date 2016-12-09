@@ -56,9 +56,6 @@ model1989 %>%
   ylab("Adjusted p-value") +
   labs(title="p-value vs. estimated change of the words during June 1989 - June 1990 (p<0.0005)")
 
-png("upload.png", width = 600, height =400)
-ggsave("graph/1989model.png") 
-
 model1989_top6 <- model1989 %>%
   top_n(6,abs(estimate)) %>%
   mutate (En = translateCnWords(word))
@@ -73,8 +70,7 @@ model1989_top6 %>%
   facet_wrap(~ En) + 
   labs (title = "Word change during 1989-1990", y ="Frequency", x ="Date")
 
-png("upload.png", width = 600, height =400)
-ggsave("graph/1989_word_change.png")
+
 ######################################################################################
 
 df1986<- df %>%
@@ -134,8 +130,7 @@ model1986_top6 %>%
   facet_wrap(~ En) + 
   labs (title = "Word change during 1986-1987", y ="Frequency", x ="Date")
 
-png("upload.png", width = 600, height =400)
-ggsave("graph/1986_word_change.png") 
+
 
 
 
