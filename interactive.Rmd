@@ -6,7 +6,7 @@ output:
 ---
 <br>
 
-###*Instructions for our [Shiny App](https://jtbeyond.shinyapps.io/hw10/)*
+###*Instructions for Our [Shiny App](https://jtbeyond.shinyapps.io/hw10/)*
 
 For this tab, we further develop the last two graphs in the "Ideological Analysis" tab and make them interactive and include them in a Shiny App. Use the long slide bar right under the graph to select time period for visualization. Go to "Index plot options" to select ideology subcategories to display. In addition, we provide a function to create topic models. Feel free to select numbers of topics in topic models and top terms to be shown in "Topic model options." Notice that it would take some time to generate results when lots of topics are chosen, since the system needs time to translate Chinese terms in our dataset into English. Finally, feel free to download data with information regarding your selected time period in "Data Download."
 <br>
