@@ -76,7 +76,7 @@ In the *People's Daily*, before the intensive military repression of the movemen
 ***
 ## Binomial Statistical Analysis of Word Frequency Change
 <br>
-Here we conduct binomial statistical analysis to trace changes of frequency of key terms during 12 months after the repression for both movements (*Note: We define the occurences of word in each day`s frot page divided by the total number of words as the frequency*) . In both graphs as follow, dots represent terms, x-axis represents the change of appearance probability of given terms over 12 months. Positive numbers mark increases in frequency. Y-axis marks the p-value of frequency change. To be clear, we only present 50 terms whose extents of frequency change are the most among all words, and changes for all these selected terms are significant at the .05 level. 
+Here we conduct binomial statistical analysis to trace changes of frequency of key terms during 12 months after the repression for both movements. In both graphs as follow, dots represent terms, x-axis represents the change of appearance probability of given terms over 12 months. Positive numbers mark increases in frequency. Y-axis marks the p-value of frequency change. To be clear, we only present 50 terms whose extents of frequency change are the most among all words, and changes for all these selected terms are significant at the .05 level. 
 <br>
 <br>
 
@@ -171,7 +171,7 @@ model1989 %>%
 
 These graphs present interesting findings. During 12 months after the military repression of the 1986 Student Demonstration, most of these significant terms experience an increase in frequency. However, for the case of Tiananmen Square Protest in 1989, the opposite trend is observed. Most of the key terms experience a decrease in word frequency. This suggests that there are denser discourses immediately following the 1989 movement, while the opposite is the case for the 1986 Student Demonstration. 
 
-In the following two tables, we provide tables to show those terms that change most abruptly after the repression for both events. First we present the result table for the 1986 Student Demonstration, with the English translation of the key terms (*Note: "XIII" represents the 13th National Congress of the Communist Party of China, which was held during October 25-November 1, 1987*).
+In the following two tables, we provide tables to show those terms that change most abruptly after the repression for both events. First we present the result table for the 1986 Student Demonstration, with the English translation of the key terms *(Note: "XIII" means the 13th National Congress of the Communist Party of China, which was held during October 25 to November 1, 1987)*.
 <br>
 
 ```{r Table-1, echo=FALSE}
@@ -206,7 +206,7 @@ knitr::include_graphics("graph/top1989.png")
 ## Tentative Visualization of Selected Key Words
 <br>
 What are the relationships between characteristics of key words and their changes of frequency? To preliminary examine such relationships, we tentatively select four word pairs and plot their frequency change during the months after the repression of two movement events:
-
+<br>
 
 ```{r fig.width=4, fig.height=4,echo=FALSE,out.extra='style="fixed:left"'}
 df<-read_feather("data/df") %>%
