@@ -1,12 +1,12 @@
 ---
-title: "Interactive Ideological Analysis"
+title: "<b>Interactive Ideological Analysis</b>"
 output: 
   html_document:
     theme: cosmo
 ---
 <br>
 
-###*Instructions*
+###*Instructions for our [Shiny App](https://jtbeyond.shinyapps.io/hw10/)*
 
 For this tab, we further develop the last two graphs in the "Ideological Analysis" tab and make them interactive and include them in a Shiny App. Use the long slide bar right under the graph to select time period for visualization. Go to "Index plot options" to select ideology subcategories to display. In addition, we provide a function to create topic models. Feel free to select numbers of topics in topic models and top terms to be shown in "Topic model options." Notice that it would take some time to generate results when lots of topics are chosen, since the system needs time to translate Chinese terms in our dataset into English. Finally, feel free to download data with information regarding your selected time period in "Data Download."
 <br>
@@ -22,23 +22,6 @@ library(topicmodels)
 library(DT)
 library(shiny)
 library(shinyjs)
-source("02_translation.R")
-
-data <- read_csv("dataframe/data.csv")
-
-df_daily_percent <-data %>%
-  group_by (Datetime) %>%
-  summarise (SI = sum (SI_score), WI = sum (WI_score), EP = sum(EP_score), daily_term =sum (count)) %>%
-  # calculate in each month, the featured terms count for how many percentage in total vocabulary
-  mutate (SI= 100*(SI/daily_term), WI= 100*(WI/daily_term), EP = 100*(EP/daily_term)) %>%
-  select (Datetime, SI, WI, EP) %>%
-  gather (key, percent, -Datetime) 
-
-
-df_term_count <-data %>%
-  select(Datetime, term, count) %>%
-  filter (term !="　　")
-
 ```
 
 
