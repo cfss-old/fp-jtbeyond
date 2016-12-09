@@ -29,7 +29,7 @@ This page contains a preliminary analysis of official discourse change. Here we 
 ***
 ## Interactive Table 
 
-First, we provide an interactive table to present counts of terms in the front page of People's Daily on each day from May 4, 1989 to July 3, 1989. This table may help get some sense of the terms that appear in the People's Daily at that period of time. Sort dates, terms, and word counts using the arrow next to each column name. 
+First, we provide an interactive table to present counts of terms in the front page of People's Daily on each day from May 4, 1989 (one month before military repression of the movement) to July 3, 1989 (one month after military repression of the movement). This table may help get some sense of the terms that appear in the People's Daily at that period of time. Sort dates, terms, and word counts using the arrow next to each column name. 
 <br>
 
 ***
@@ -49,9 +49,9 @@ datatable (data.table, rownames = FALSE,
 
 
 ***
-## Preliminary Data Exploration of People`s Daily 
+## Preliminary Data Exploration of People's Daily 
 
-Not surprisingly, before and after the periods of two social movements, we observe the dramatic shifts in both of topics and frequency of certain terms. Take the Tiananmen Movement as an example. We found in People's Daily, before the crackdown on June 4th 1986, the terms, such as "Students", "Work" and "The problem" appear more frequently, which represents a certain tolerance of government towards the students who staged the demonstration. As Zhao argued in his book, *the Power of Tiananmen*, in this period, government was looking for opportunity to handle legitimate crisis in a moderate way. After the crackdown, People's Daily changed this tone very abruptly. As it had employed the ideological strategy to warn and intimidate the crowds at the end of social movement in 1986, People`s Daily frequently used "Counter-revolution", "Riots" to disdain the 1989 movement, and thus to defend its own ideological legitimacy. In the following plots, we show the comparison of word frequency and topic models before and after the repression. Besides such similarity, we also found in contrast to 1986, the longevity of the terms with strong ideological disposition is relatively short. (Since this point has been clearly shown in our last four plots of word frequency, we did not put our preliminary data here.) This leads us to consider whether the patterns of the narrative strategy might be not exactly the same in 1986 and 1989, as what people usually think. Therefore, in order to understand how the abrupt narrative construction after each repression of social movement remains or disappears, we apply the statistic model to map the frequency of words in a relatively long period of time (1 year) in the next step.
+Then, we again take the Tiananmen Square Movement in 1989 as an example and examine shifts in topics as well as frequency of terms before and after the repression of social movements: 
 <br>
 <br>
 
@@ -68,14 +68,15 @@ Not surprisingly, before and after the periods of two social movements, we obser
 <br>
 
 ![](img/topic_after.png)
+<br>
 
-
+In the *People's Daily*, before the intensive military repression of the movement, or so-called "crackdown" on June 4, 1989, terms such as students, work, and the problem appear more frequently, which may indicate a certain tolerance of government towards the students who staged the demonstration. However, after the crackdown, the *People's Daily* changed its tone abruptly. It frequently used terms such as counter-revolution and riots, which may suggest its intent to disdain the movement.
 
 
 ***
 ## Binomial Statistical Analysis of Word Frequency Change
 <br>
-We conduct binomial statistical analysis to trace changes of frequency of key terms during 12 months after the repression for both movements (*Note: We define the occurences of word in each day`s frot page divided by the total number of words as the frequency*) . In both graphs as follow, dots represent terms, x-axis represents the change of appearance probability of given terms over 12 months. Positive numbers mark increases in frequency. Y-axis marks the p-value of frequency change. To be clear, we only present 50 terms whose extents of frequency change are the most among all words, and changes for all these selected terms are significant at the .05 level. 
+Here we conduct binomial statistical analysis to trace changes of frequency of key terms during 12 months after the repression for both movements (*Note: We define the occurences of word in each day`s frot page divided by the total number of words as the frequency*) . In both graphs as follow, dots represent terms, x-axis represents the change of appearance probability of given terms over 12 months. Positive numbers mark increases in frequency. Y-axis marks the p-value of frequency change. To be clear, we only present 50 terms whose extents of frequency change are the most among all words, and changes for all these selected terms are significant at the .05 level. 
 <br>
 <br>
 
@@ -187,7 +188,7 @@ kable(top_1989, digits=5, align ="c")
 ```
 <br>
 
-Further, we plot the top six words with greatest estimated change in 1986 and 1989 vs. time as shown below :
+Furthermore, we also plot the top six terms with greatest estimated frequency change in 1986 and 1989 respectively, as shown below:
 <br>
 <br>
 ```{r, out.width = "700px",echo=FALSE}
