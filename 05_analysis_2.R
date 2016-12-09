@@ -68,8 +68,10 @@ model1989_top6 %>%
   geom_point() +
   geom_smooth(method = 'loess') +
   facet_wrap(~ En) + 
-  labs (title = "Word change during 1989-1990", y ="Frequency", x ="Date")
-
+  labs (title = "Word change during 1989-1990", y ="Frequency", x ="Date")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+png("upload.png", width = 500, height =400)
+ggsave("graph/top1989.png") 
 
 ######################################################################################
 
@@ -113,8 +115,6 @@ model1986 %>%
   ylab("Adjusted p-value") +
   labs(title="p-value vs. estimated change of the words during December 1986 - December 1987 (p<0.0005)")
 
-png("upload.png", width = 600, height =400)
-ggsave("graph/1986model.png") 
 
 model1986_top6 <- model1986 %>%
   top_n(6,abs(estimate)) %>%
@@ -128,8 +128,10 @@ model1986_top6 %>%
   geom_point() +
   geom_smooth(method = 'loess') +
   facet_wrap(~ En) + 
-  labs (title = "Word change during 1986-1987", y ="Frequency", x ="Date")
-
+  labs (title = "Word change during 1986-1987", y ="Frequency", x ="Date")+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+png("upload.png", width = 500, height =400)
+ggsave("graph/top1986.png")
 
 
 
