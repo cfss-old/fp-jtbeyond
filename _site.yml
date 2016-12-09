@@ -6,13 +6,15 @@ navbar:
     - text: "Introduction"
       href: index.html
     - text: "Exploration"
-      href: about.html
+      href: explore.html
     - text: "Ideological Analysis"
       href: ideology.html
     - text: "Interactive Analysis"
       href: interactive.html
     - text: "Conclusion"
       href: conclusion.html
-output:
-  html_document:
-    theme: readable
+    
+  right:
+    - text: "Text Ananlysis App"
+      icon: glyphicon-search
+      href: https://yuhaozhuang.shinyapps.io/authoritarian_discourse/
