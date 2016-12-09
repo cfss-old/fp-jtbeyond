@@ -1,4 +1,4 @@
-## Final project 
+## Final Project 
 ### *Yuhao Zhuang and Tong Ju*
 Thank you very much for your interest in our project.
 
