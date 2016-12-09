@@ -4,6 +4,10 @@ output:
   html_document:
     theme: cosmo
 ---
+![](img/movement.jpg)
+<br>
+<br>
+
 In summary, our empirical findings indicate that discourses of Chinese authoritarian government *did* change in the 1980s when multiple social movements emerged and fell. To be more specific, discourses with strong ideology reached its peak when the 1986 Student Demonstration and the Tiananmen Square Protest in 1989 were repressed and then declined, and discourses with weak ideology and characteristics of economic performance gradually increased over the 1980s. These findings provide empirical support for Zhao (2000, 2001)'s theory of authoritarian legitimacy. As Zhao, we agree that the Chinese state use more economy-oriented and rationalist-legalist discourses after the Tiananmen Square Protest in 1989 rather than after the 1986 Student Demonstration. This suggests that when later movements emerged in the 1980s the authoritarian regime may deploy more diverse discourses to distract public attention rather than attempt to deploy discourses with strong ideology to force the public to show commitment to communist ideology.
 
 Finally, we provide a brief reflection on the relationship between the content of the People's Daily, the official communist party newspaper, and the authoritarian government of China in the 1980s. It has been well received that content of this newspaper reflected the decisions and wills of the authoritarian state, so we treat the content of the newspaper as discourses of authoritarian government. However, it should be noted that the decisions and wills of the authoritarian state were not shaped by the government per se, but also the result of interactions between the state and the society. As demonstrated by the movement events in the 1980s, the discourses *did* change over time, due to the recurrent interactions between the state and the general public within multiple emerging social movements. Therefore, we advocate that further research should shed more light on the media-state relations in authoritarian contexts.

@@ -18,3 +18,4 @@ source("04_analysis_1.R")
 source("05_analysis_2.R")
 source("06_analysis_3.R")
 
+rmarkdown::render_site()
