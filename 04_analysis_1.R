@@ -123,7 +123,12 @@ ggplot (df_monthly_score, aes(x = year_month, y = percent, color = key)) +
   # change the x-axis`s label 
   scale_x_date(date_breaks = "1 year", date_minor_breaks = "1 month", date_labels = "%Y-%m") +
   # change the label`s name
-  scale_color_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance"))
+  scale_color_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance"))+
+  geom_vline(xintercept = as.numeric(as.Date("1989-04-15")), color ="red", linetype = "longdash", alpha=0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("1989-06-04")), color ="red", linetype = "longdash", alpha=0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("1986-12-03")), color ="blue", linetype = "longdash", alpha=0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("1987-01-01")), color ="blue", linetype = "longdash", alpha=0.5) 
+  
   
 png("upload.png", width = 600, height =400)
 ggsave("graph/mscore.png") 
@@ -156,7 +161,11 @@ ggplot (df_daily_score, aes(x = Datetime, y = percent, fill = key)) +
   # change the x-axis`s label 
   scale_x_date(date_breaks = "1 year", date_minor_breaks = "1 month", date_labels = "%Y-%m") +
   # change the label`s name
-  scale_fill_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance")) +
+  scale_fill_discrete(breaks=c("adj_SI", "adj_WI", "adj_EP"), label=c("Strong Ideology","Weak Ideology", "Economic Performance"))+
+  geom_vline(xintercept = as.numeric(as.Date("1989-04-15")), color ="red", linetype = "longdash", alpha=0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("1989-06-04")), color ="red", linetype = "longdash", alpha=0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("1986-12-03")), color ="blue", linetype = "longdash", alpha=0.5) +
+  geom_vline(xintercept = as.numeric(as.Date("1987-01-01")), color ="blue", linetype = "longdash", alpha=0.5)  
   
 png("upload.png", width = 600, height =400)
 ggsave("graph/dscore.png") 

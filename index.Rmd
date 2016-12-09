@@ -48,8 +48,8 @@ Although Zhao's work posits key legitimacy-based dynamics underlying changes of 
 
 ***
 ## Movement Background and Data
-```{r, out.width = "300px",echo=FALSE, out.extra='style="float:right"' }
-knitr::include_graphics("img/PD1989.jpg")
+```{r, out.width = "350px",echo=FALSE, out.extra='style="float:right"' }
+knitr::include_graphics("img/PD.png")
 ```
 As noted, this project studies how discourses of Chinese authoritarian government change in response to two emerging social movements in China during the 1980s, the 1986 Student Demonstration and the Tiananmen Square Protest in 1989. The 1986 Student Demonstrations took place in a number of Chinese cities from December 1986 until early January 1987. The demonstrations started in the city of Hefei in Anhui Province before spreading to other cities such as Shanghai and Nanjing. The movement participants were critical of the Chinese government’s lack of political reforms. Street demonstrations started to occur in early December, but quickly dissipated under military repression of the state by early January before achieving any of its stated goals. For more details about this movement, please see [here](https://en.wikipedia.org/wiki/1986_Chinese_Student_Demonstrations). The Tiananmen Square Protests in 1989 were also student-led demonstrations in Beijing in 1989. The movement arose from societal members' dissatisfaction with government's lack of political reforms as well, but it grew into large-scale protests across the country in April and May 1989, involving millions of people. The protests were forcibly suppressed after the government declared martial law in early June. In what became widely known as the Tiananmen Square Massacre, troops with assault rifles and tanks killed at least several hundred demonstrators trying to block the military's advance towards Tiananmen Square. For more details about this movement, please see [here](https://en.wikipedia.org/wiki/Tiananmen_Square_protests_of_1989).
 
