@@ -75,7 +75,7 @@ In the *People's Daily*, before the intensive military repression of the movemen
 
 ***
 ## Binomial Statistical Analysis of Word Frequency Change
-<br>
+
 Here we conduct binomial statistical analysis to trace changes of frequency of key terms during 12 months after the repression for both movements. In both graphs as follow, dots represent terms, x-axis represents the change of appearance probability of given terms over 12 months. Positive numbers mark increases in frequency. Y-axis marks the p-value of frequency change. To be clear, we only present 50 terms whose extents of frequency change are the most among all words, and changes for all these selected terms are significant at the .05 level. 
 <br>
 <br>
@@ -204,7 +204,7 @@ knitr::include_graphics("graph/top1989.png")
 
 ***
 ## Tentative Visualization of Selected Key Words
-<br>
+
 What are the relationships between characteristics of key words and their changes of frequency? To preliminary examine such relationships, we tentatively select four word pairs and plot their frequency change during the months after the repression of two movement events:
 <br>
 
